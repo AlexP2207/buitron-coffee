@@ -1,0 +1,351 @@
+
+:root {
+  --cafe: #4e342e;
+  --cafe-oscuro: #35211d;
+  --cafe-medio: #795548;
+  --terracota: #68402f;
+  --naranja: #d97832;
+  --naranja-oscuro: #bd5d20;
+  --crema: #f7f1e8;
+  --crema-claro: #fffdf9;
+  --texto: #34241f;
+  --texto-suave: #82736b;
+  --borde: #eadfd3;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.gestion-resenas-container {
+  min-height: 100vh;
+  background: var(--crema);
+  padding: 20px;
+  color: var(--texto);
+}
+
+/* ENCABEZADO */
+.gestion-resenas-header {
+  background: var(--crema-claro);
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--borde);
+  box-shadow: 0 3px 10px rgba(53, 33, 29, 0.07);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gestion-resenas-header h1 {
+  font-size: 22px;
+  color: var(--cafe);
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+/* BOTÓN VOLVER */
+.btn-volver {
+  background: var(--cafe-medio);
+  color: white;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-volver:hover {
+  background: var(--cafe-oscuro);
+  transform: translateY(-1px);
+}
+
+/* MENSAJES */
+.error-message {
+  background: #fbe9e7;
+  color: #9b3027;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #edc5bf;
+}
+
+.exito-message {
+  background: #e8f2e5;
+  color: #35633a;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #c9dfc3;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: var(--cafe-medio);
+}
+
+/* FILTROS */
+.filtros-resenas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro-btn {
+  padding: 9px 20px;
+  border: 1px solid var(--borde);
+  background: var(--crema-claro);
+  color: var(--cafe);
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.filtro-btn:hover {
+  background: #efe2d3;
+  border-color: #d8c3ae;
+}
+
+.filtro-btn.active {
+  background: var(--naranja);
+  color: white;
+  border-color: var(--naranja);
+  box-shadow: 0 3px 8px rgba(189, 93, 32, 0.18);
+}
+
+/* CUADRÍCULA DE RESEÑAS */
+.resenas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 20px;
+}
+
+/* TARJETA */
+.resena-admin-card {
+  background: var(--crema-claro);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(53, 33, 29, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.resena-admin-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(53, 33, 29, 0.12);
+}
+
+/* CABECERA DE LA TARJETA */
+.resena-admin-header {
+  background: #f0e5d8;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.resena-producto {
+  font-weight: 700;
+  color: var(--cafe);
+  font-size: 14px;
+}
+
+/* ESTADOS */
+.estado-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.estado-badge.pendiente {
+  background: #fff0d8;
+  color: #99591d;
+  border: 1px solid #f0d3a7;
+}
+
+.estado-badge.aprobada {
+  background: #e5f0df;
+  color: #38623a;
+  border: 1px solid #c9dfc0;
+}
+
+.estado-badge.rechazada {
+  background: #f8e4df;
+  color: #a33c30;
+  border: 1px solid #ebc5bd;
+}
+
+/* CONTENIDO DE LA RESEÑA */
+.resena-admin-body {
+  padding: 20px;
+}
+
+.resena-usuario {
+  font-weight: 700;
+  color: var(--cafe);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.resena-calificacion {
+  margin-bottom: 12px;
+}
+
+.resena-calificacion .estrella-llena {
+  color: var(--naranja);
+  font-size: 18px;
+}
+
+.resena-calificacion .estrella-vacia {
+  color: #d9cfc5;
+  font-size: 18px;
+}
+
+.resena-comentario {
+  color: #594940;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.resena-fecha {
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+/* ACCIONES */
+.resena-admin-actions {
+  padding: 15px 20px;
+  background: #faf5ee;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.btn-aprobar {
+  background: #527747;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-aprobar:hover {
+  background: #3e6135;
+  transform: translateY(-1px);
+}
+
+.btn-rechazar {
+  background: #a94335;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-rechazar:hover {
+  background: #873329;
+  transform: translateY(-1px);
+}
+
+/* SIN RESEÑAS */
+.sin-datos {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--crema-claro);
+  border: 1px dashed #d8c3ae;
+  border-radius: 12px;
+  color: var(--texto-suave);
+  font-size: 16px;
+}
+
+/* ACCESIBILIDAD */
+.btn-volver:focus-visible,
+.filtro-btn:focus-visible,
+.btn-aprobar:focus-visible,
+.btn-rechazar:focus-visible {
+  outline: 3px solid #e7a66f;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .gestion-resenas-container {
+    padding: 15px;
+  }
+
+  .gestion-resenas-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .gestion-resenas-header h1 {
+    font-size: 20px;
+  }
+
+  .resenas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros-resenas {
+    justify-content: center;
+  }
+
+  .filtro-btn {
+    flex: 1 1 auto;
+  }
+
+  .resena-admin-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .resena-admin-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .gestion-resenas-container {
+    padding: 10px;
+  }
+
+  .gestion-resenas-header {
+    padding: 16px;
+  }
+
+  .resena-admin-body {
+    padding: 16px;
+  }
+
+  .resena-admin-actions {
+    padding: 12px;
+  }
+
+  .btn-aprobar,
+  .btn-rechazar {
+    flex: 1;
+  }
+}
