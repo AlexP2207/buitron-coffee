@@ -1,1 +1,0 @@
-module.exports = "archivo-de-prueba";
